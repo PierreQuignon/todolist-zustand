@@ -1,0 +1,55 @@
+.main-todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 5px;
+  gap: 5px;
+  background-color: #201f32;
+}
+
+.todo-container {
+  border-radius: 5px;
+  padding: 8px;
+  border: solid;
+  border-width: 1px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: #020019;
+}
+
+.title-container {
+  font-size: 22px;
+  margin-bottom: 7px;
+  color: white;
+  font-weight:700;
+}
+
+.todo-content {
+  font-size: 13px;
+  color: rgb(227, 224, 224);
+}
+
+.todo-title {
+  color: rgb(227, 224, 224);
+}
+
+.delete-validate {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3px;
+}
+
+.toggle-box {
+  font-size: 22px;
+  color: rgb(3, 193, 250);
+}
+
+.delete-icon {
+  font-size: 22px;
+  color: rgb(227, 224, 224);
+}
