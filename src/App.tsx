@@ -1,4 +1,4 @@
-import TodoCounter from "./components/TodoCounter";
+// import TodoCounter from "./components/TodoCounter";
 import TodoAdder from "./components/TodoAdder";
 import TodoContainer from "./components/TodoContainer";
 import "./index.css"
@@ -10,10 +10,10 @@ function App() {
       <div className="main-container">
         <div>
           <TodoAdder />
-          <TodoCounter />
+          {/* <TodoCounter /> */}
         </div>
         <div className="main-todo-container">
-          <TodoContainer />
+          <TodoContainer/>
         </div>
       </div>
     </>
