@@ -9,10 +9,15 @@ export interface Todo {
 
 export interface StoreState {
   todo: Todo[];
-  addTodo: (id: number, title: string, done: boolean, content: string) => void;
+  addTodo: ( title: string, done: boolean, content: string) => void;
 }
 
-const store = create<StoreState>((set) => ({
+
+// Le le hook de ton store qui va te permettre d'avoir accès
+// a ta donnée partout dans ton app
+// en faisant les appels comme comme dans TodoContainer pour l'affiche
+
+const useTodoStore = create<StoreState>()((set) => ({
   todo: [
     {
       id: 1,
@@ -36,10 +41,16 @@ const store = create<StoreState>((set) => ({
         "Je dois augmenter de 1km par semaine la distance parcouru à chaque sortie",
     },
   ],
-  addTodo: (id, title, done, content) =>
+  // Grace à cette action tu mettras a jour ton store
+  addTodo: ( title, done, content) =>
     set((state) => ({
-      todo: [...state.todo, { id, title, done, content }],
+      todo: [...state.todo, { 
+        id:state.todo.length +1, // petit bonnus pour mettre a jour tes ID mais tu peux le changer 
+         title, done, content }],
     })),
 }));
 
-export const useStore = create<StoreState>(store);
+
+export default useTodoStore
+
+// A SUPPRIMER inutile export const useStore = create<StoreState>(store);
