@@ -3,11 +3,13 @@ import { MdDelete } from "react-icons/md";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { AiOutlineCheckSquare } from "react-icons/ai";
 import "../style/TodoContainer.css";
-import { useStore } from "../Store";
-import { Todo } from "../Store";
+import { useStore } from "./Store";
+import { Todo } from "./Store";
+import { StoreState } from "./Store";
 
 interface TodoContainerProps {
   state: boolean;
+  store:  StoreState;
 }
 
 const TodoContainer: FC<TodoContainerProps> = ({ state }) => {
