@@ -8,12 +8,12 @@ export interface Todo {
 }
 
 export interface StoreState {
-  todo: Todo[];
+  todos: Todo[];
   addTodo: (id: number, title: string, done: boolean, content: string) => void;
 }
 
 const store = create<StoreState>((set) => ({
-  todo: [
+  todos: [
     {
       id: 1,
       title: "Apprendre Zustand",
@@ -38,7 +38,7 @@ const store = create<StoreState>((set) => ({
   ],
   addTodo: (id, title, done, content) =>
     set((state) => ({
-      todo: [...state.todo, { id, title, done, content }],
+      todos: [...state.todos, { id, title, done, content }],
     })),
 }));
 

@@ -14,7 +14,7 @@ interface TodoContainerProps {
 
 const TodoContainer: FC<TodoContainerProps> = ({ state }) => {
   const todos = useStore((store) =>
-    store.todo.filter((todo: Todo) => todo.done === state)
+    store.todos.filter((todo: Todo) => todo.done === state)
   );
 
   return (
