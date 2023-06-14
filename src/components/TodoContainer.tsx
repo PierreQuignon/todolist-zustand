@@ -7,7 +7,11 @@ import { Todo } from "./Store";
 
 
 const TodoContainer=  () => {
+
   const todos = useTodoStore((state) => state.todos);
+  const deleteTodo = useTodoStore((state) => state.deleteTodo);
+  const toggleTodo = useTodoStore((state) => state.toggleTodo);
+
   return (
     <>
       <h1 className="title-container">Liste des tâches</h1>
@@ -17,14 +21,14 @@ const TodoContainer=  () => {
             <div className="todo-title">{todo.title}</div>
             <div className="todo-content">{todo.content}</div>
             <div className="delete-validate">
-              <button className="toggle-box">
+              <button className="toggle-box" onClick={()=>toggleTodo(todo.id)}>
                 {todo.done ? (
                   <AiOutlineCheckSquare />
                 ) : (
                   <MdCheckBoxOutlineBlank />
                 )}
               </button>
-              <button className="delete-icon">
+              <button className="delete-icon" onClick={()=>deleteTodo(todo.id)}>
                 <MdDelete />
               </button>
             </div>

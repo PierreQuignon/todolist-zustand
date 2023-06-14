@@ -10,6 +10,8 @@ export interface Todo {
 export interface StoreState {
   todos: Todo[];
   addTodo: (title: string, done: boolean, content: string) => void;
+  deleteTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
 }
 
 const useTodoStore = create<StoreState>()((set) => ({
@@ -47,6 +49,22 @@ const useTodoStore = create<StoreState>()((set) => ({
           content,
         },
       ],
+    })),
+  deleteTodo: (id) =>
+    set((state) => ({
+      todos: state.todos.filter((todo) => todo.id !== id),
+    })),
+  toggleTodo: (id) =>
+    set((state) => ({
+      todos: state.todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            done: !todo.done,
+          };
+        }
+        return todo;
+      }),
     })),
 }));
 
