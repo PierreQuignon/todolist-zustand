@@ -1,28 +1,37 @@
-import { FC } from "react"
 import useTodoStore from "./Store"
 import "../style/TodoAdder.css"
+import { useState } from "react"
 
-const TodoAdder:FC = () => {
-  const AddTodo = useTodoStore((state) => state.AddTodo)
+const TodoAdder = () => {
+  // action d'ajout de ton store. Mettra ton store a jour des que cette action 
+  // sera appelée
+  const addTodo = useTodoStore((state) => state.addTodo)
+
+  const [title, setTitle] = useState<string>('')
+  const [content, setContent] = useState<string>('')
+  
   return (
     <div className="container-adder">
     <input
       placeholder="Titre de la tâche"
       className="border border-black p-2 m-2 rounded"
       type="text"
-      // onChange={(e) => {
-      //   setTitle(e.target.value);
-      // }}
+       onChange={(e) => {
+         setTitle(e.target.value);
+       }}
     />
     <input
       placeholder="Contenu de la tâche"
       className="border border-black p-2 m-2 rounded"
       type="text"
-      // onChange={(e) => {
-      //   // setContent(e.target.value);
-      // }}
+      onChange={(e) => {
+        setContent(e.target.value);
+       }}
     />
-    <button onClick={() => AddTodo(1)}>
+    <button onClick={() => 
+     
+      addTodo( title, false, content)}
+      >
       <div className="button-add">
         Ajouter
       </div>
