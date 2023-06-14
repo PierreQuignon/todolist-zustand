@@ -20,6 +20,7 @@
   margin-top: 8px;
   margin-bottom: 8px;
   background-color: #020019;
+  width: 625px;
 }
 
 .title-container {
@@ -30,11 +31,12 @@
 }
 
 .todo-content {
-  font-size: 13px;
+  font-size: 15px;
   color: rgb(227, 224, 224);
 }
 
 .todo-title {
+  font-size: 17px;
   color: rgb(227, 224, 224);
 }
 
@@ -47,9 +49,20 @@
 .toggle-box {
   font-size: 22px;
   color: rgb(3, 193, 250);
+  background-color: transparent;
+  border: none;
 }
 
 .delete-icon {
   font-size: 22px;
   color: rgb(227, 224, 224);
+  background-color: transparent;
+  border: none;
+}
+
+.delete-icon:hover {
+  font-size: 22px;
+  color: rgb(3, 193, 250);
+  background-color: transparent;
+  border: none;
 }

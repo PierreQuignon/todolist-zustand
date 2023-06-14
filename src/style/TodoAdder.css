@@ -40,6 +40,8 @@
 input {
   background-color: #020019;
   color: white;
+  margin-top: 5px;
+  padding: 4px;
 }
 
 input::placeholder {

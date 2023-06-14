@@ -11,7 +11,6 @@ const TodoAdder = () => {
     <div className="container-adder">
       <input
         placeholder="Titre de la tâche"
-        className="border border-black p-2 m-2 rounded"
         type="text"
         onChange={(e) => {
           setTitle(e.target.value);
@@ -19,14 +18,16 @@ const TodoAdder = () => {
       />
       <input
         placeholder="Contenu de la tâche"
-        className="border border-black p-2 m-2 rounded"
         type="text"
         onChange={(e) => {
           setContent(e.target.value);
         }}
       />
-      <button onClick={() => addTodo(title, false, content)}>
-        <div className="button-add">Ajouter</div>
+      <button
+        className="button-add"
+        onClick={() => addTodo(title, false, content)}
+      >
+        Ajouter
       </button>
     </div>
   );
