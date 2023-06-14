@@ -9,10 +9,10 @@ export interface Todo {
 
 export interface StoreState {
   todos: Todo[];
-  addTodo: (id: number, title: string, done: boolean, content: string) => void;
+  addTodo: (title: string, done: boolean, content: string) => void;
 }
 
-const store = create<StoreState>((set) => ({
+const useTodoStore = create<StoreState>()((set) => ({
   todos: [
     {
       id: 1,
@@ -36,14 +36,18 @@ const store = create<StoreState>((set) => ({
         "Je dois augmenter de 1km par semaine la distance parcouru à chaque sortie",
     },
   ],
-  // Grace à cette action tu mettras a jour ton store
-  addTodo: ( title, done, content) =>
+  addTodo: (title, done, content) =>
     set((state) => ({
-      todos: [...state.todos, { id, title, done, content }],
+      todos: [
+        ...state.todos,
+        {
+          id: state.todos.length + 1,
+          title,
+          done,
+          content,
+        },
+      ],
     })),
 }));
 
-
-export default useTodoStore
-
-// A SUPPRIMER inutile export const useStore = create<StoreState>(store);
+export default useTodoStore;
