@@ -36,10 +36,14 @@ const store = create<StoreState>((set) => ({
         "Je dois augmenter de 1km par semaine la distance parcouru à chaque sortie",
     },
   ],
-  addTodo: (id, title, done, content) =>
+  // Grace à cette action tu mettras a jour ton store
+  addTodo: ( title, done, content) =>
     set((state) => ({
       todos: [...state.todos, { id, title, done, content }],
     })),
 }));
 
-export const useStore = create<StoreState>(store);
+
+export default useTodoStore
+
+// A SUPPRIMER inutile export const useStore = create<StoreState>(store);

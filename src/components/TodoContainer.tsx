@@ -3,14 +3,21 @@ import { MdDelete } from "react-icons/md";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { AiOutlineCheckSquare } from "react-icons/ai";
 import "../style/TodoContainer.css";
-import { useStore } from "./Store";
+import  useTodoStore  from "./Store";
 import { Todo } from "./Store";
 import { StoreState } from "./Store";
 
-interface TodoContainerProps {
+
+/**
+ * A revoir en fonction de ton besoin mais dans mon cas pas utile
+ * sauf si tu geres dans le cas des todo done ou pas mais je pense
+ * qu'il y a mieux qu'une props
+ *  interface TodoContainerProps {
   state: boolean;
   store:  StoreState;
 }
+*/
+const TodoContainer=  () => {
 
 const TodoContainer: FC<TodoContainerProps> = ({ state }) => {
   const todos = useStore((store) =>
